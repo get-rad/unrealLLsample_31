@@ -1,10 +1,10 @@
 # Live Link to Unreal Sample Project
 
-This project has example code for live streaming pose data from Radical Studio to Unreal Engine (version 4.25). The skeleton assets in the project match the Radical 3.1 Skeleton.
+This project has example code for live streaming pose data from Radical Studio to Unreal Engine (version 4.25).
 
-See the `BP_RADiCAL` and `AnimBP_RADiCAL_3-1` assets for a demonstration of real-time LiveLink retargeting to the RADiCAL skeleton.
+See the `BP_RADiCAL` and `AnimBP_RADiCAL_3-1` assets for a demonstration of real-time LiveLink retargeting to the RADiCAL skeleton (v3.1).
 
-Currently, LiveLink data can be retargeted in real-time to the Epic skeleton as well. See the `BP_Epic` and `AnimBP_EpicGames_Mannequin_Skeleton` assets for more details.
+The can be retargeted in real-time to the Epic skeleton as well, which allows you to use Marketplace characters that are rigged using the Epic skeleton. See the `BP_Epic` and `AnimBP_EpicGames_Mannequin_Skeleton` assets for more details.
 
 The LiveLink retargeting to the Mixamo skeleton is still a work in progress (see `AnimBP_Mixamo`)
 
@@ -21,10 +21,10 @@ For Retarget Asset, select the corresponding blueprint Remap Asset file for that
 In order to use skeletons other than the Radical skeleton, we need to remap the Radical skeleton's bone names to their counterparts on other skeletons. For example, if you open the `BP_RadToEpicRemap` asset and go to the `GetRemappedBoneName` function, you can see a big switch statement that performs the remapping. For Mixamo, the skeleton bone names match the RADiCAL skeleton bone names, so this step is unnecessary.
 
 ### Rotation conversions
-To account for some of the differences between the AI's coordinate frame, we have flipped the incoming LiveLink data's rotation and position axes. You can inspect the conversions at the `RadicalLiveLinkRemapAssetBase` class and its child classes. We expect that other skeletons will require different rotation adjustments, including swapping axes. We exposed three overridable methods to implement the root bone position, root bone rotation, and non-root bone rotation conversions.
+To account for some of the differences between the Radical Studio coordinate frame and Unreal, we have flipped the incoming LiveLink data's rotation and position axes. You can inspect the conversions at the `RadicalLiveLinkRemapAssetBase` class and its child classes. We expect that other skeletons will require different rotation adjustments, including swapping axes. We exposed three overridable methods to implement the root bone position, root bone rotation, and non-root bone rotation conversions. Please note that the AI output in Radical Studio uses the hip bone as a root, so position data should be mapped to the hips (or pelvis) in the target skeleton.
 
 ### Real-time Remapping/Retargeting
-To remap the LiveLink data (which matches RADiCAL 3.1 skeleton structure) to other skeletons, modifications to the bone rotations may be required. For the Epic skeleton, we tweaked the arm rotations, as the Epic skeleton uses an A pose by default. For the Mixamo skeleton, there are more complex differences, such as an inverted rotation for the the `LeftUpLeg` bone's Y axis (among others).
+To remap the LiveLink data (which matches RADiCAL 3.1 skeleton structure) to other skeletons, modifications to the bone rotations may be required. The incoming LiveLink data contains rotation offsets from the RADiCAL's base T-pose, and hip position. For the Epic skeleton, we tweaked the arm rotations in the AnimBP, as the Epic skeleton uses an A pose by default. For the Mixamo skeleton, there are more complex differences, such as an inverted rotation for the the `LeftUpLeg` bone's Y axis (among others).
 
 ### Post-recording Remapping/Retargeting
-Unreal provides built-in tools for retargeting existing animations (i.e. animations created with Take Recorder, or imported FBX) to other skeletons, and this method produces high quality results with the 3.0 skeleton. Once the animation asset is produced, you can retarget to any other skeleton by setting up the Retarget Manager and ensuring that both the source and target skeletons have a T-Pose. Please see our ![FBX Retargeting Project](https://github.com/get-rad/Unreal_FBX_Retarget) for more details.
+Unreal provides built-in tools for retargeting existing animations (i.e. animations created with Take Recorder, or imported FBX) to other skeletons. Once the animation asset is produced, you can retarget to any other skeleton by setting up the Retarget Manager and ensuring that both the source and target skeletons have a T-Pose. Please see our ![FBX Retargeting Project](https://github.com/get-rad/Unreal_FBX_Retarget) for more details.
