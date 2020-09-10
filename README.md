@@ -24,7 +24,7 @@ In order to use skeletons other than the Radical skeleton, we need to remap the 
 To account for some of the differences between the AI's coordinate frame, we have flipped the incoming LiveLink data's rotation and position axes. You can inspect the conversions at the `RadicalLiveLinkRemapAssetBase` class and its child classes. We expect that other skeletons will require different rotation adjustments, including swapping axes. We exposed three overridable methods to implement the root bone position, root bone rotation, and non-root bone rotation conversions.
 
 ### Real-time Remapping/Retargeting
-To remap the LiveLink data (which matches RADiCAL 3.1 skeleton structure) to other skeletons, modifications to the bone rotations may be required. For the Epic skeleton, we tweaked the arm rotations, as the Epic skeleton uses an A pose by default. For the Mixamo skeleton, there are more complex differences, including an inverted rotation for the the `LeftUpLeg` bone's Y axis.
+To remap the LiveLink data (which matches RADiCAL 3.1 skeleton structure) to other skeletons, modifications to the bone rotations may be required. For the Epic skeleton, we tweaked the arm rotations, as the Epic skeleton uses an A pose by default. For the Mixamo skeleton, there are more complex differences, such as an inverted rotation for the the `LeftUpLeg` bone's Y axis (among others).
 
 ### Post-recording Remapping/Retargeting
 Unreal provides built-in tools for retargeting existing animations (i.e. animations created with Take Recorder, or imported FBX) to other skeletons, and this method produces high quality results with the 3.0 skeleton. Please see our Remap Asset Pack for more details.
