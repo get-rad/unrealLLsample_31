@@ -11,19 +11,23 @@ FVector URadToEpicRemapAsset::ConvertRootPosition(FVector LLPosition) const
         LLPosition.Z,
         LLPosition.Y
     );
-
 }
 
 FQuat URadToEpicRemapAsset::ConvertRootRotation(FQuat LLRotation) const
 {
+    return FQuat(
+        -LLRotation.Y,
+        -LLRotation.Z,
+        LLRotation.X,
+        LLRotation.W
+    );
+
     return FQuat(
         -LLRotation.X,
         LLRotation.Z,
         -LLRotation.Y,
         LLRotation.W
     );
-
-
 }
 
 FQuat URadToEpicRemapAsset::ConvertBoneRotation(FQuat LLRotation) const
@@ -34,6 +38,4 @@ FQuat URadToEpicRemapAsset::ConvertBoneRotation(FQuat LLRotation) const
         -LLRotation.Z,
         LLRotation.W
     );
-
-
 }

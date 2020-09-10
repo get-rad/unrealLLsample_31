@@ -21,4 +21,6 @@ protected:
     virtual FQuat ConvertRootRotation(FQuat LLRotation) const override;
 
     virtual FQuat ConvertBoneRotation(FQuat LLRotation) const override;
+    
+        virtual FName GetTargetRootName() const override { return "pelvis";} 
 };

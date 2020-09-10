@@ -68,9 +68,3 @@ void URadicalLiveLinkRemapAssetBase::BuildPoseFromAnimationData(float DeltaTime,
     }
 }
 
-// On Radical 3.1 skeleton, root bone is at same location as pelvis.
-// For other skeletons, the corresponding bone's name can differ and you can override this method.
-FName URadicalLiveLinkRemapAssetBase::GetTargetRootName() const
-{
-    return "Root";
-}
