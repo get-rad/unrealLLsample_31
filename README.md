@@ -1,6 +1,6 @@
 # Live Link to Unreal Sample Project
 
-This project has example code for live streaming pose data from Radical Studio to Unreal Engine (version 4.25).
+This project has example code for live streaming pose data from Radical Studio to Unreal Engine (version 4.25). Note: to open this sample project, you must have **Visual Studio** and the **Game Developmenet with C++ module** installed. See ![this guide](https://docs.unrealengine.com/en-US/Programming/Development/VisualStudioSetup/index.html) for more information.
 
 See the `BP_RADiCAL` and `AnimBP_RADiCAL_3-1` assets for a demonstration of real-time LiveLink retargeting to the RADiCAL skeleton (v3.1).
 
