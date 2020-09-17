@@ -1,6 +1,6 @@
 # Live Link to Unreal Sample Project
 
-This project has example code for live streaming pose data from Radical Studio to Unreal Engine (version 4.25). Note: to open this sample project, you must have **Visual Studio** and the **Game Development with C++** module installed. See ![this guide](https://docs.unrealengine.com/en-US/Programming/Development/VisualStudioSetup/index.html) for more information. ![Learn more about RADiCAL Motion here.](https://getrad.co/)
+This project has example code for live streaming pose data from Radical Studio to Unreal Engine (version 4.25). Note: to open this sample project, you must have **Visual Studio** and the **Game Development with C++** module installed. See ![this guide](https://docs.unrealengine.com/en-US/Programming/Development/VisualStudioSetup/index.html) for more information.
 
 You will also additionally need .NET SDK installed to build the project. You can modify your Visual Studio installation as follows:
 ![.NET installation](Tutorial_Images/install_dotnet.png)
