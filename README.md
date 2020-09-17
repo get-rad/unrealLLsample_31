@@ -2,6 +2,9 @@
 
 This project has example code for live streaming pose data from Radical Studio to Unreal Engine (version 4.25). Note: to open this sample project, you must have **Visual Studio** and the **Game Development with C++** module installed. See ![this guide](https://docs.unrealengine.com/en-US/Programming/Development/VisualStudioSetup/index.html) for more information.
 
+You will also additionally need .NET SDK installed to build the project. You can modify your Visual Studio installation as follows:
+![.NET installation](Tutorial_Images/install_dotnet.png)
+
 See the `BP_RADiCAL` and `AnimBP_RADiCAL_3-1` assets for a demonstration of real-time LiveLink retargeting to the RADiCAL skeleton (v3.1).
 
 The can be retargeted in real-time to the Epic skeleton as well, which allows you to use Marketplace characters that are rigged using the Epic skeleton. See the `BP_Epic` and `AnimBP_EpicGames_Mannequin_Skeleton` assets for more details.
