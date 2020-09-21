@@ -1,9 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "RadToRadRemapAsset.h"
+#include "RadToMixamoRemapAsset.h"
 
-FVector URadToRadRemapAsset::ConvertRootPosition(FVector LLPosition) const
+FVector URadToMixamoRemapAsset::ConvertRootPosition(FVector LLPosition) const
 {
     // Unreal uses cm, so apply x100 conversion factor
     return 100 * FVector(
@@ -11,20 +11,19 @@ FVector URadToRadRemapAsset::ConvertRootPosition(FVector LLPosition) const
         -LLPosition.Y,
         LLPosition.Z
     );
-
 }
 
-FQuat URadToRadRemapAsset::ConvertRootRotation(FQuat LLRotation) const
+FQuat URadToMixamoRemapAsset::ConvertRootRotation(FQuat LLRotation) const
 {
     return FQuat(
+        -LLRotation.Y,
         -LLRotation.X,
-        LLRotation.Y,
         -LLRotation.Z,
         LLRotation.W
     );
 }
 
-FQuat URadToRadRemapAsset::ConvertBoneRotation(FQuat LLRotation) const
+FQuat URadToMixamoRemapAsset::ConvertBoneRotation(FQuat LLRotation) const
 {
     return FQuat(
         -LLRotation.X,
