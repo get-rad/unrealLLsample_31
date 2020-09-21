@@ -9,7 +9,7 @@ See the `BP_RADiCAL` and `AnimBP_RADiCAL_3-1` assets for a demonstration of real
 
 The can be retargeted in real-time to the Epic skeleton as well, which allows you to use Marketplace characters that are rigged using the Epic skeleton. See the `BP_Epic` and `AnimBP_EpicGames_Mannequin_Skeleton` assets for more details.
 
-The LiveLink retargeting to the Mixamo skeleton is still a work in progress (see `AnimBP_Mixamo`)
+There is also a work-in-progress example of retargeting to the Mixamo skeleton (see `AnimBP_Mixamo`), which shows how to manipulate the live link data in the Event Graph and pass it into the AnimGraph for individual bone transforms.
 
 Using post-recording Animation Retargeting, recorded Live Link data can also be retargeted to other skeletons with good results.
 
