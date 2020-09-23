@@ -1,6 +1,6 @@
 # Live Link to Unreal Sample Project
 
-This project has example code for live streaming pose data from Radical Studio to Unreal Engine (version 4.25). Note: to open this sample project, you must have **Visual Studio** and the **Game Development with C++** module installed. See ![this guide](https://docs.unrealengine.com/en-US/Programming/Development/VisualStudioSetup/index.html) for more information.
+This project has example code for live streaming pose data from Radical Studio to Unreal Engine (version 4.25). Note: to open this sample project, you must have **Visual Studio** and the **Game Development with C++** module installed. See [this guide](https://docs.unrealengine.com/en-US/Programming/Development/VisualStudioSetup/index.html) for more information.
 
 You will also additionally need .NET SDK installed to build the project. You can modify your Visual Studio installation as follows:
 ![.NET installation](Tutorial_Images/install_dotnet.png)
@@ -30,4 +30,4 @@ To account for some of the differences between the Radical Studio coordinate fra
 To remap the LiveLink data (which matches RADiCAL 3.1 skeleton structure) to other skeletons, modifications to the bone rotations may be required. The incoming LiveLink data contains rotation offsets from the RADiCAL's base T-pose, and hip position. For the Epic skeleton, we tweaked the arm rotations in the AnimBP, as the Epic skeleton uses an A pose by default. For the Mixamo skeleton, there are more complex differences, such as an inverted rotation for the the `LeftUpLeg` bone's Y axis (among others).
 
 ### Post-recording Remapping/Retargeting
-Unreal provides built-in tools for retargeting existing animations (i.e. animations created with Take Recorder, or imported FBX) to other skeletons. Once the animation asset is produced, you can retarget to any other skeleton by setting up the Retarget Manager and ensuring that both the source and target skeletons have a T-Pose. Please see our ![FBX Retargeting Project](https://github.com/get-rad/Unreal_FBX_Retarget) for more details.
+Unreal provides built-in tools for retargeting existing animations (i.e. animations created with Take Recorder, or imported FBX) to other skeletons. Once the animation asset is produced, you can retarget to any other skeleton by setting up the Retarget Manager and ensuring that both the source and target skeletons have a T-Pose. Please see our [FBX Retargeting Project](https://github.com/get-rad/Unreal_FBX_Retarget) for more details.
