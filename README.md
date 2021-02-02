@@ -18,7 +18,7 @@ After starting the Live Link stream from Radical Studio, open the UE4 editor and
 
 ### Live Link Preview
 The Live Link data can be previewed inside the Skeleton, Skeletal Mesh, Blueprint or Animation Blueprint windows for a given skeletal asset. On the right side, go to Preview Scene Settings, under Animation, change the Preview Controller to Live Link Preview Controller. Then, change the Live Link Subject Name to `RadicalPose`.
-For Retarget Asset, select the corresponding blueprint Remap Asset file for that skeleton. For example, for the Radical skeleton, choose the `RadToRadRemap` asset. For the Epic skeleton, choose the `BP_RadToEpicRemap` asset.
+For Retarget Asset, select the corresponding blueprint Remap Asset file for that skeleton. For example, for the Radical skeleton, choose the `RadToRadRemap` asset. For the Epic skeleton, choose the `BP_RadToEpicRemapAsset`.
 
 ### Remap Assets
 In order to use skeletons other than the Radical skeleton, we need to remap the Radical skeleton's bone names to their counterparts on other skeletons. For example, if you open the `BP_RadToEpicRemap` asset and go to the `GetRemappedBoneName` function, you can see a big switch statement that performs the remapping. For Mixamo, the skeleton bone names match the RADiCAL skeleton bone names, so this step is unnecessary.
